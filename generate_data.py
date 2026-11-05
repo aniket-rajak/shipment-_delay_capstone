@@ -1,9 +1,17 @@
-"""Synthetic shipment data for the Delay Intelligence capstone.
-Run once:  python generate_data.py   (writes data/hubs.csv, data/raw_shipments.csv, data/new_shipments.csv)
-Do not edit any constant: every number in the brief was measured on this exact output."""
-import os
+"""Synthetic shipment data for the Shipment Delay Intelligence Pipeline.
+
+Run once:  python generate_data.py
+The script writes data/hubs.csv, data/raw_shipments.csv, and data/new_shipments.csv
+into the data directory next to this script. Do not edit any constant: every
+number in the project brief was measured on this exact output.
+"""
+from pathlib import Path
+
 import numpy as np
 import pandas as pd
+
+ROOT = Path(__file__).resolve().parent
+DATA_DIR = ROOT / "data"
 
 HUBS = [
     ("HUB01", "Mumbai", "West", 1, 1500), ("HUB02", "Delhi", "North", 1, 1600),
@@ -91,14 +99,14 @@ def make_messy(df, seed, n_missing, n_case, n_sentinel, n_dupes, id_start):
 
 
 if __name__ == "__main__":
-    os.makedirs("data", exist_ok=True)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
     hubs = pd.DataFrame(HUBS, columns=["hub_id", "hub_city", "region", "hub_tier", "hub_daily_capacity"])
-    hubs.to_csv("data/hubs.csv", index=False)
+    hubs.to_csv(DATA_DIR / "hubs.csv", index=False)
     raw = make_messy(simulate(50, 2604), seed=7, n_missing=(36, 24, 12, 18),
                      n_case=120, n_sentinel=5, n_dupes=24, id_start=10001)
-    raw.to_csv("data/raw_shipments.csv", index=False)
+    raw.to_csv(DATA_DIR / "raw_shipments.csv", index=False)
     new = make_messy(simulate(2, 99), seed=8, n_missing=(3, 2, 1, 2),
                      n_case=6, n_sentinel=0, n_dupes=0, id_start=90001)
     new = new.drop(columns=["delivery_hours"])
-    new.to_csv("data/new_shipments.csv", index=False)
+    new.to_csv(DATA_DIR / "new_shipments.csv", index=False)
     print(len(hubs), len(raw), len(new))

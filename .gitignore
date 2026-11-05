@@ -1,6 +1,26 @@
-.venv/
-venv/
+# Python caches
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Notebooks
 .ipynb_checkpoints/
+
+# Environment and secrets
 .env
+
+# Build and distribution artifacts
+build/
+dist/
+*.egg-info/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
