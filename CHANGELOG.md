@@ -10,6 +10,7 @@ All notable changes to the **Shipment Delay Intelligence Pipeline** are document
 
 - Rewrote `README.md` from scratch with verified project information, installation and execution instructions, directory structure, architecture and workflow diagrams, actual model results, operational recommendations, limitations, and future improvements.
 - Consolidated the project identity so that **ANIKET RAJAK** is consistently identified as the project author and maintainer across project documentation.
+- Added the public repository URL (`https://github.com/aniket-rajak/shipment-_delay_capstone`) to the project author information.
 - Added a neutral repository-history and licensing note. The Git history is preserved, and no historical commits are rewritten.
 
 ### Reproducibility and input validation

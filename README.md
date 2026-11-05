@@ -11,6 +11,7 @@ A Python machine learning project for shipment delay analysis, delivery-time reg
 **ANIKET RAJAK**
 
 - **Project Author and Maintainer:** ANIKET RAJAK
+- **Repository:** https://github.com/aniket-rajak/shipment-_delay_capstone
 - **Primary Language:** Python
 - **Domain:** Machine Learning, Data Science, Shipment Analytics
 
@@ -682,6 +683,7 @@ After a complete run, the repository should contain:
 **ANIKET RAJAK**
 
 - **Role:** Project Author and Maintainer
+- **Repository:** https://github.com/aniket-rajak/shipment-_delay_capstone
 - **Domain:** Machine Learning, Data Science, Shipment Analytics
 - **Primary Language:** Python
 - **Project:** Shipment Delay Intelligence Pipeline
